@@ -1,0 +1,894 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C123428021D0B10200F98B71 /* PopupDialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C123427F21D0B10200F98B71 /* PopupDialogView.swift */; };
+		C123428221D0B11500F98B71 /* PopupDialogView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C123428121D0B11400F98B71 /* PopupDialogView.xib */; };
+		C123428921D0D70700F98B71 /* DialogViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C123428721D0D70700F98B71 /* DialogViewCell.swift */; };
+		C123428A21D0D70700F98B71 /* DialogViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C123428821D0D70700F98B71 /* DialogViewCell.xib */; };
+		C123428C21D0EA7300F98B71 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = C123428B21D0EA7300F98B71 /* City.swift */; };
+		C130531B21CF57FF004EB788 /* GlovoDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C130531A21CF57FF004EB788 /* GlovoDataManager.swift */; };
+		C130531D21CF5BFD004EB788 /* GlovoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C130531C21CF5BFD004EB788 /* GlovoService.swift */; };
+		C130531F21CF67E1004EB788 /* GlovoAPIs.swift in Sources */ = {isa = PBXBuildFile; fileRef = C130531E21CF67E1004EB788 /* GlovoAPIs.swift */; };
+		C130532121CF6892004EB788 /* GlovoSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = C130532021CF6892004EB788 /* GlovoSession.swift */; };
+		C130532421CF8530004EB788 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = C130532321CF8530004EB788 /* Country.swift */; };
+		C130532B21D09B82004EB788 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C130532A21D09B82004EB788 /* ViewController.swift */; };
+		C130532D21D09BBB004EB788 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C130532C21D09BBB004EB788 /* Main.storyboard */; };
+		C14C590521D67CE90001A241 /* GlovoLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14C590421D67CE90001A241 /* GlovoLocationManager.swift */; };
+		C14C590721D7809F0001A241 /* GlovoMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14C590621D7809F0001A241 /* GlovoMarkerView.swift */; };
+		C14C590921D793650001A241 /* GlovoAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14C590821D793650001A241 /* GlovoAnnotation.swift */; };
+		C14D82FA21CDEA1200ADA6C0 /* GlovoMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14D82F921CDEA1200ADA6C0 /* GlovoMapViewController.swift */; };
+		C14D82FC21CDEAE900ADA6C0 /* GlovoMapProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14D82FB21CDEAE900ADA6C0 /* GlovoMapProtocols.swift */; };
+		C14D82FE21CDEB5D00ADA6C0 /* GlovoMapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C14D82FD21CDEB5D00ADA6C0 /* GlovoMapView.xib */; };
+		C14D830021CDECBD00ADA6C0 /* GlovoMapRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14D82FF21CDECBD00ADA6C0 /* GlovoMapRouter.swift */; };
+		C14D830221CDEE8B00ADA6C0 /* GlovoMapPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14D830121CDEE8B00ADA6C0 /* GlovoMapPresenter.swift */; };
+		C14D830421CDEFD400ADA6C0 /* GlovoMapInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14D830321CDEFD400ADA6C0 /* GlovoMapInteractor.swift */; };
+		C14D830A21CE7EF000ADA6C0 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14D830921CE7EF000ADA6C0 /* LoadingView.swift */; };
+		C14D830C21CE7F9500ADA6C0 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C14D830B21CE7F9500ADA6C0 /* LoadingView.xib */; };
+		C14E6E9421C53D75003E5FCD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14E6E9321C53D75003E5FCD /* AppDelegate.swift */; };
+		C14E6E9B21C53D77003E5FCD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C14E6E9A21C53D77003E5FCD /* Assets.xcassets */; };
+		C14E6E9E21C53D77003E5FCD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C14E6E9C21C53D77003E5FCD /* LaunchScreen.storyboard */; };
+		C14E6EB421C53D77003E5FCD /* GlovoriousUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14E6EB321C53D77003E5FCD /* GlovoriousUITests.swift */; };
+		C1EA77CD21D90302005B0055 /* GlovoMapPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EA77CC21D90302005B0055 /* GlovoMapPresenterTests.swift */; };
+		C1EA77D321D906F2005B0055 /* MockGlovoMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EA77D221D906F2005B0055 /* MockGlovoMapView.swift */; };
+		C1EA77D521D9074E005B0055 /* MockGlovoMapInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EA77D421D9074E005B0055 /* MockGlovoMapInteractor.swift */; };
+		C1EA77D721D90786005B0055 /* MockGlovoMapRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EA77D621D90786005B0055 /* MockGlovoMapRouter.swift */; };
+		C1EA77D921D907CA005B0055 /* MockGlovoMapInteractorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EA77D821D907CA005B0055 /* MockGlovoMapInteractorDelegate.swift */; };
+		C1EA77DC21D9081A005B0055 /* MockGlovoDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EA77DB21D9081A005B0055 /* MockGlovoDataManager.swift */; };
+		C1EA77DE21D90883005B0055 /* MockGlovoServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EA77DD21D90883005B0055 /* MockGlovoServices.swift */; };
+		C1EA77E021D908F6005B0055 /* MockGlovoLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EA77DF21D908F6005B0055 /* MockGlovoLocationManager.swift */; };
+		C1EA77E221D91599005B0055 /* GlovoMapInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EA77E121D91599005B0055 /* GlovoMapInteractorTests.swift */; };
+		F968D5E8BF6FD5349E1337B7 /* Pods_Glovorious.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6D2D615DC61C678E55C849C /* Pods_Glovorious.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C14E6EA521C53D77003E5FCD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C14E6E8821C53D75003E5FCD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C14E6E8F21C53D75003E5FCD;
+			remoteInfo = Glovorious;
+		};
+		C14E6EB021C53D77003E5FCD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C14E6E8821C53D75003E5FCD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C14E6E8F21C53D75003E5FCD;
+			remoteInfo = Glovorious;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		79B4F6D6F228C936743426C8 /* Pods-Glovorious.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Glovorious.release.xcconfig"; path = "Pods/Target Support Files/Pods-Glovorious/Pods-Glovorious.release.xcconfig"; sourceTree = "<group>"; };
+		7F5675F6BCCA245AE871CA9C /* Pods-Glovorious.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Glovorious.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Glovorious/Pods-Glovorious.debug.xcconfig"; sourceTree = "<group>"; };
+		C123427F21D0B10200F98B71 /* PopupDialogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupDialogView.swift; sourceTree = "<group>"; };
+		C123428121D0B11400F98B71 /* PopupDialogView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopupDialogView.xib; sourceTree = "<group>"; };
+		C123428721D0D70700F98B71 /* DialogViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogViewCell.swift; sourceTree = "<group>"; };
+		C123428821D0D70700F98B71 /* DialogViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DialogViewCell.xib; sourceTree = "<group>"; };
+		C123428B21D0EA7300F98B71 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		C130531A21CF57FF004EB788 /* GlovoDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlovoDataManager.swift; sourceTree = "<group>"; };
+		C130531C21CF5BFD004EB788 /* GlovoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlovoService.swift; sourceTree = "<group>"; };
+		C130531E21CF67E1004EB788 /* GlovoAPIs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlovoAPIs.swift; sourceTree = "<group>"; };
+		C130532021CF6892004EB788 /* GlovoSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlovoSession.swift; sourceTree = "<group>"; };
+		C130532321CF8530004EB788 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		C130532A21D09B82004EB788 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C130532C21D09BBB004EB788 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		C14C590421D67CE90001A241 /* GlovoLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlovoLocationManager.swift; sourceTree = "<group>"; };
+		C14C590621D7809F0001A241 /* GlovoMarkerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlovoMarkerView.swift; sourceTree = "<group>"; };
+		C14C590821D793650001A241 /* GlovoAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlovoAnnotation.swift; sourceTree = "<group>"; };
+		C14D82F921CDEA1200ADA6C0 /* GlovoMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlovoMapViewController.swift; sourceTree = "<group>"; };
+		C14D82FB21CDEAE900ADA6C0 /* GlovoMapProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlovoMapProtocols.swift; sourceTree = "<group>"; };
+		C14D82FD21CDEB5D00ADA6C0 /* GlovoMapView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GlovoMapView.xib; sourceTree = "<group>"; };
+		C14D82FF21CDECBD00ADA6C0 /* GlovoMapRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlovoMapRouter.swift; sourceTree = "<group>"; };
+		C14D830121CDEE8B00ADA6C0 /* GlovoMapPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlovoMapPresenter.swift; sourceTree = "<group>"; };
+		C14D830321CDEFD400ADA6C0 /* GlovoMapInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlovoMapInteractor.swift; sourceTree = "<group>"; };
+		C14D830921CE7EF000ADA6C0 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		C14D830B21CE7F9500ADA6C0 /* LoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
+		C14E6E9021C53D75003E5FCD /* Glovorious.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Glovorious.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C14E6E9321C53D75003E5FCD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C14E6E9A21C53D77003E5FCD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C14E6E9D21C53D77003E5FCD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C14E6E9F21C53D77003E5FCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C14E6EA421C53D77003E5FCD /* GlovoriousTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GlovoriousTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C14E6EAA21C53D77003E5FCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C14E6EAF21C53D77003E5FCD /* GlovoriousUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GlovoriousUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C14E6EB321C53D77003E5FCD /* GlovoriousUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlovoriousUITests.swift; sourceTree = "<group>"; };
+		C14E6EB521C53D77003E5FCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C1EA77CC21D90302005B0055 /* GlovoMapPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlovoMapPresenterTests.swift; sourceTree = "<group>"; };
+		C1EA77CE21D9033C005B0055 /* GlovoriousTests-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GlovoriousTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		C1EA77D221D906F2005B0055 /* MockGlovoMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockGlovoMapView.swift; sourceTree = "<group>"; };
+		C1EA77D421D9074E005B0055 /* MockGlovoMapInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockGlovoMapInteractor.swift; sourceTree = "<group>"; };
+		C1EA77D621D90786005B0055 /* MockGlovoMapRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockGlovoMapRouter.swift; sourceTree = "<group>"; };
+		C1EA77D821D907CA005B0055 /* MockGlovoMapInteractorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockGlovoMapInteractorDelegate.swift; sourceTree = "<group>"; };
+		C1EA77DB21D9081A005B0055 /* MockGlovoDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockGlovoDataManager.swift; sourceTree = "<group>"; };
+		C1EA77DD21D90883005B0055 /* MockGlovoServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockGlovoServices.swift; sourceTree = "<group>"; };
+		C1EA77DF21D908F6005B0055 /* MockGlovoLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockGlovoLocationManager.swift; sourceTree = "<group>"; };
+		C1EA77E121D91599005B0055 /* GlovoMapInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlovoMapInteractorTests.swift; sourceTree = "<group>"; };
+		E6D2D615DC61C678E55C849C /* Pods_Glovorious.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Glovorious.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C14E6E8D21C53D75003E5FCD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F968D5E8BF6FD5349E1337B7 /* Pods_Glovorious.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C14E6EA121C53D77003E5FCD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C14E6EAC21C53D77003E5FCD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		87A3903DA097A1AD8155F626 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E6D2D615DC61C678E55C849C /* Pods_Glovorious.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C130532221CF851D004EB788 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C130532321CF8530004EB788 /* Country.swift */,
+				C123428B21D0EA7300F98B71 /* City.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C130532521D08428004EB788 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C14D82F421CDDA4000ADA6C0 /* GlovoMap */ = {
+			isa = PBXGroup;
+			children = (
+				C14D82F821CDE9BE00ADA6C0 /* Views */,
+				C14D82FB21CDEAE900ADA6C0 /* GlovoMapProtocols.swift */,
+				C14D82FF21CDECBD00ADA6C0 /* GlovoMapRouter.swift */,
+				C14D830121CDEE8B00ADA6C0 /* GlovoMapPresenter.swift */,
+				C14D830321CDEFD400ADA6C0 /* GlovoMapInteractor.swift */,
+			);
+			path = GlovoMap;
+			sourceTree = "<group>";
+		};
+		C14D82F521CDE40600ADA6C0 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				C14D82F721CDE52200ADA6C0 /* Modules */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		C14D82F621CDE49700ADA6C0 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				C14E6E9A21C53D77003E5FCD /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		C14D82F721CDE52200ADA6C0 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				C14D830721CE7E8C00ADA6C0 /* Common */,
+				C14D82F421CDDA4000ADA6C0 /* GlovoMap */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		C14D82F821CDE9BE00ADA6C0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C14C590621D7809F0001A241 /* GlovoMarkerView.swift */,
+				C14D82F921CDEA1200ADA6C0 /* GlovoMapViewController.swift */,
+				C14D82FD21CDEB5D00ADA6C0 /* GlovoMapView.xib */,
+				C14C590821D793650001A241 /* GlovoAnnotation.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C14D830621CE7A7800ADA6C0 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				C14D82F521CDE40600ADA6C0 /* Classes */,
+				C14D82F621CDE49700ADA6C0 /* Assets */,
+				C130532521D08428004EB788 /* Resources */,
+				C14E6E9321C53D75003E5FCD /* AppDelegate.swift */,
+				C130532A21D09B82004EB788 /* ViewController.swift */,
+				C130532C21D09BBB004EB788 /* Main.storyboard */,
+				C14E6E9C21C53D77003E5FCD /* LaunchScreen.storyboard */,
+				C14E6E9F21C53D77003E5FCD /* Info.plist */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		C14D830721CE7E8C00ADA6C0 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				C130532221CF851D004EB788 /* Models */,
+				C14D830821CE7E9300ADA6C0 /* Views */,
+				C14C590421D67CE90001A241 /* GlovoLocationManager.swift */,
+				C130531A21CF57FF004EB788 /* GlovoDataManager.swift */,
+				C130532021CF6892004EB788 /* GlovoSession.swift */,
+				C130531E21CF67E1004EB788 /* GlovoAPIs.swift */,
+				C130531C21CF5BFD004EB788 /* GlovoService.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		C14D830821CE7E9300ADA6C0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C14D830921CE7EF000ADA6C0 /* LoadingView.swift */,
+				C14D830B21CE7F9500ADA6C0 /* LoadingView.xib */,
+				C123427F21D0B10200F98B71 /* PopupDialogView.swift */,
+				C123428121D0B11400F98B71 /* PopupDialogView.xib */,
+				C123428721D0D70700F98B71 /* DialogViewCell.swift */,
+				C123428821D0D70700F98B71 /* DialogViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C14E6E8721C53D75003E5FCD = {
+			isa = PBXGroup;
+			children = (
+				C14E6E9221C53D75003E5FCD /* Glovorious */,
+				C14E6EA721C53D77003E5FCD /* GlovoriousTests */,
+				C14E6EB221C53D77003E5FCD /* GlovoriousUITests */,
+				C14E6E9121C53D75003E5FCD /* Products */,
+				FB140CA05A69311DF5F91A6E /* Pods */,
+				87A3903DA097A1AD8155F626 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		C14E6E9121C53D75003E5FCD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C14E6E9021C53D75003E5FCD /* Glovorious.app */,
+				C14E6EA421C53D77003E5FCD /* GlovoriousTests.xctest */,
+				C14E6EAF21C53D77003E5FCD /* GlovoriousUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C14E6E9221C53D75003E5FCD /* Glovorious */ = {
+			isa = PBXGroup;
+			children = (
+				C14D830621CE7A7800ADA6C0 /* src */,
+			);
+			path = Glovorious;
+			sourceTree = "<group>";
+		};
+		C14E6EA721C53D77003E5FCD /* GlovoriousTests */ = {
+			isa = PBXGroup;
+			children = (
+				C1EA77CF21D90682005B0055 /* Modules */,
+				C14E6EAA21C53D77003E5FCD /* Info.plist */,
+				C1EA77CE21D9033C005B0055 /* GlovoriousTests-Bridging-Header.h */,
+			);
+			path = GlovoriousTests;
+			sourceTree = "<group>";
+		};
+		C14E6EB221C53D77003E5FCD /* GlovoriousUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C14E6EB321C53D77003E5FCD /* GlovoriousUITests.swift */,
+				C14E6EB521C53D77003E5FCD /* Info.plist */,
+			);
+			path = GlovoriousUITests;
+			sourceTree = "<group>";
+		};
+		C1EA77CF21D90682005B0055 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				C1EA77DA21D90808005B0055 /* Commons */,
+				C1EA77D021D90688005B0055 /* Map */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		C1EA77D021D90688005B0055 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				C1EA77D121D906DE005B0055 /* Mocks */,
+				C1EA77CC21D90302005B0055 /* GlovoMapPresenterTests.swift */,
+				C1EA77E121D91599005B0055 /* GlovoMapInteractorTests.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		C1EA77D121D906DE005B0055 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				C1EA77D221D906F2005B0055 /* MockGlovoMapView.swift */,
+				C1EA77D421D9074E005B0055 /* MockGlovoMapInteractor.swift */,
+				C1EA77D621D90786005B0055 /* MockGlovoMapRouter.swift */,
+				C1EA77D821D907CA005B0055 /* MockGlovoMapInteractorDelegate.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		C1EA77DA21D90808005B0055 /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				C1EA77DB21D9081A005B0055 /* MockGlovoDataManager.swift */,
+				C1EA77DD21D90883005B0055 /* MockGlovoServices.swift */,
+				C1EA77DF21D908F6005B0055 /* MockGlovoLocationManager.swift */,
+			);
+			path = Commons;
+			sourceTree = "<group>";
+		};
+		FB140CA05A69311DF5F91A6E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7F5675F6BCCA245AE871CA9C /* Pods-Glovorious.debug.xcconfig */,
+				79B4F6D6F228C936743426C8 /* Pods-Glovorious.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C14E6E8F21C53D75003E5FCD /* Glovorious */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C14E6EB821C53D77003E5FCD /* Build configuration list for PBXNativeTarget "Glovorious" */;
+			buildPhases = (
+				B31FC87915DD78C51501475F /* [CP] Check Pods Manifest.lock */,
+				C14E6E8C21C53D75003E5FCD /* Sources */,
+				C14E6E8D21C53D75003E5FCD /* Frameworks */,
+				C14E6E8E21C53D75003E5FCD /* Resources */,
+				B886DF551F8591E658379F4C /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Glovorious;
+			productName = Glovorious;
+			productReference = C14E6E9021C53D75003E5FCD /* Glovorious.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C14E6EA321C53D77003E5FCD /* GlovoriousTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C14E6EBB21C53D77003E5FCD /* Build configuration list for PBXNativeTarget "GlovoriousTests" */;
+			buildPhases = (
+				C14E6EA021C53D77003E5FCD /* Sources */,
+				C14E6EA121C53D77003E5FCD /* Frameworks */,
+				C14E6EA221C53D77003E5FCD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C14E6EA621C53D77003E5FCD /* PBXTargetDependency */,
+			);
+			name = GlovoriousTests;
+			productName = GlovoriousTests;
+			productReference = C14E6EA421C53D77003E5FCD /* GlovoriousTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C14E6EAE21C53D77003E5FCD /* GlovoriousUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C14E6EBE21C53D77003E5FCD /* Build configuration list for PBXNativeTarget "GlovoriousUITests" */;
+			buildPhases = (
+				C14E6EAB21C53D77003E5FCD /* Sources */,
+				C14E6EAC21C53D77003E5FCD /* Frameworks */,
+				C14E6EAD21C53D77003E5FCD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C14E6EB121C53D77003E5FCD /* PBXTargetDependency */,
+			);
+			name = GlovoriousUITests;
+			productName = GlovoriousUITests;
+			productReference = C14E6EAF21C53D77003E5FCD /* GlovoriousUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C14E6E8821C53D75003E5FCD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Octo Siswardhono";
+				TargetAttributes = {
+					C14E6E8F21C53D75003E5FCD = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					C14E6EA321C53D77003E5FCD = {
+						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
+						TestTargetID = C14E6E8F21C53D75003E5FCD;
+					};
+					C14E6EAE21C53D77003E5FCD = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = C14E6E8F21C53D75003E5FCD;
+					};
+				};
+			};
+			buildConfigurationList = C14E6E8B21C53D75003E5FCD /* Build configuration list for PBXProject "Glovorious" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C14E6E8721C53D75003E5FCD;
+			productRefGroup = C14E6E9121C53D75003E5FCD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C14E6E8F21C53D75003E5FCD /* Glovorious */,
+				C14E6EA321C53D77003E5FCD /* GlovoriousTests */,
+				C14E6EAE21C53D77003E5FCD /* GlovoriousUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C14E6E8E21C53D75003E5FCD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C14E6E9E21C53D77003E5FCD /* LaunchScreen.storyboard in Resources */,
+				C123428221D0B11500F98B71 /* PopupDialogView.xib in Resources */,
+				C130532D21D09BBB004EB788 /* Main.storyboard in Resources */,
+				C14D82FE21CDEB5D00ADA6C0 /* GlovoMapView.xib in Resources */,
+				C14E6E9B21C53D77003E5FCD /* Assets.xcassets in Resources */,
+				C123428A21D0D70700F98B71 /* DialogViewCell.xib in Resources */,
+				C14D830C21CE7F9500ADA6C0 /* LoadingView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C14E6EA221C53D77003E5FCD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C14E6EAD21C53D77003E5FCD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B31FC87915DD78C51501475F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Glovorious-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B886DF551F8591E658379F4C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Glovorious/Pods-Glovorious-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Polyline/Polyline.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Polyline.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Glovorious/Pods-Glovorious-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C14E6E8C21C53D75003E5FCD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C14C590721D7809F0001A241 /* GlovoMarkerView.swift in Sources */,
+				C130532121CF6892004EB788 /* GlovoSession.swift in Sources */,
+				C14D82FC21CDEAE900ADA6C0 /* GlovoMapProtocols.swift in Sources */,
+				C130531F21CF67E1004EB788 /* GlovoAPIs.swift in Sources */,
+				C123428921D0D70700F98B71 /* DialogViewCell.swift in Sources */,
+				C14D82FA21CDEA1200ADA6C0 /* GlovoMapViewController.swift in Sources */,
+				C130532421CF8530004EB788 /* Country.swift in Sources */,
+				C14D830021CDECBD00ADA6C0 /* GlovoMapRouter.swift in Sources */,
+				C14C590521D67CE90001A241 /* GlovoLocationManager.swift in Sources */,
+				C130531D21CF5BFD004EB788 /* GlovoService.swift in Sources */,
+				C123428021D0B10200F98B71 /* PopupDialogView.swift in Sources */,
+				C14E6E9421C53D75003E5FCD /* AppDelegate.swift in Sources */,
+				C14C590921D793650001A241 /* GlovoAnnotation.swift in Sources */,
+				C130532B21D09B82004EB788 /* ViewController.swift in Sources */,
+				C14D830A21CE7EF000ADA6C0 /* LoadingView.swift in Sources */,
+				C14D830221CDEE8B00ADA6C0 /* GlovoMapPresenter.swift in Sources */,
+				C14D830421CDEFD400ADA6C0 /* GlovoMapInteractor.swift in Sources */,
+				C123428C21D0EA7300F98B71 /* City.swift in Sources */,
+				C130531B21CF57FF004EB788 /* GlovoDataManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C14E6EA021C53D77003E5FCD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C1EA77CD21D90302005B0055 /* GlovoMapPresenterTests.swift in Sources */,
+				C1EA77D921D907CA005B0055 /* MockGlovoMapInteractorDelegate.swift in Sources */,
+				C1EA77DC21D9081A005B0055 /* MockGlovoDataManager.swift in Sources */,
+				C1EA77D521D9074E005B0055 /* MockGlovoMapInteractor.swift in Sources */,
+				C1EA77D321D906F2005B0055 /* MockGlovoMapView.swift in Sources */,
+				C1EA77DE21D90883005B0055 /* MockGlovoServices.swift in Sources */,
+				C1EA77E021D908F6005B0055 /* MockGlovoLocationManager.swift in Sources */,
+				C1EA77E221D91599005B0055 /* GlovoMapInteractorTests.swift in Sources */,
+				C1EA77D721D90786005B0055 /* MockGlovoMapRouter.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C14E6EAB21C53D77003E5FCD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C14E6EB421C53D77003E5FCD /* GlovoriousUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C14E6EA621C53D77003E5FCD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C14E6E8F21C53D75003E5FCD /* Glovorious */;
+			targetProxy = C14E6EA521C53D77003E5FCD /* PBXContainerItemProxy */;
+		};
+		C14E6EB121C53D77003E5FCD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C14E6E8F21C53D75003E5FCD /* Glovorious */;
+			targetProxy = C14E6EB021C53D77003E5FCD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C14E6E9C21C53D77003E5FCD /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C14E6E9D21C53D77003E5FCD /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C14E6EB621C53D77003E5FCD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C14E6EB721C53D77003E5FCD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C14E6EB921C53D77003E5FCD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F5675F6BCCA245AE871CA9C /* Pods-Glovorious.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K4Y9TZD88K;
+				INFOPLIST_FILE = "$(SRCROOT)/Glovorious/src/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.octoos.Glovorious;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		C14E6EBA21C53D77003E5FCD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79B4F6D6F228C936743426C8 /* Pods-Glovorious.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K4Y9TZD88K;
+				INFOPLIST_FILE = "$(SRCROOT)/Glovorious/src/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.octoos.Glovorious;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		C14E6EBC21C53D77003E5FCD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K4Y9TZD88K;
+				INFOPLIST_FILE = GlovoriousTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.octoos.GlovoriousTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "GlovoriousTests/GlovoriousTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Glovorious.app/Glovorious";
+			};
+			name = Debug;
+		};
+		C14E6EBD21C53D77003E5FCD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K4Y9TZD88K;
+				INFOPLIST_FILE = GlovoriousTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.octoos.GlovoriousTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "GlovoriousTests/GlovoriousTests-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Glovorious.app/Glovorious";
+			};
+			name = Release;
+		};
+		C14E6EBF21C53D77003E5FCD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K4Y9TZD88K;
+				INFOPLIST_FILE = GlovoriousUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.octoos.GlovoriousUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Glovorious;
+			};
+			name = Debug;
+		};
+		C14E6EC021C53D77003E5FCD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K4Y9TZD88K;
+				INFOPLIST_FILE = GlovoriousUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.octoos.GlovoriousUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Glovorious;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C14E6E8B21C53D75003E5FCD /* Build configuration list for PBXProject "Glovorious" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C14E6EB621C53D77003E5FCD /* Debug */,
+				C14E6EB721C53D77003E5FCD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C14E6EB821C53D77003E5FCD /* Build configuration list for PBXNativeTarget "Glovorious" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C14E6EB921C53D77003E5FCD /* Debug */,
+				C14E6EBA21C53D77003E5FCD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C14E6EBB21C53D77003E5FCD /* Build configuration list for PBXNativeTarget "GlovoriousTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C14E6EBC21C53D77003E5FCD /* Debug */,
+				C14E6EBD21C53D77003E5FCD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C14E6EBE21C53D77003E5FCD /* Build configuration list for PBXNativeTarget "GlovoriousUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C14E6EBF21C53D77003E5FCD /* Debug */,
+				C14E6EC021C53D77003E5FCD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C14E6E8821C53D75003E5FCD /* Project object */;
+}

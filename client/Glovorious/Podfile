@@ -1,0 +1,8 @@
+def static_libs
+   pod 'Polyline', '~> 4.0'
+end
+
+target 'Glovorious' do
+	static_libs
+    use_frameworks!
+end
