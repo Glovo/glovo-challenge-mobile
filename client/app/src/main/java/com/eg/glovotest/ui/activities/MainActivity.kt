@@ -1,7 +1,8 @@
-package com.eg.glovotest
+package com.eg.glovotest.ui.activities
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import com.eg.glovotest.R
 
 class MainActivity : AppCompatActivity() {
 
