@@ -9,6 +9,7 @@ import retrofit2.Callback
 import com.eg.glovotest.network.entities.City
 import com.eg.glovotest.network.entities.CityDetails
 import com.eg.glovotest.network.entities.Country
+import com.eg.glovotest.network.jsonmappers.JsonCityResponse
 import com.eg.glovotest.network.jsonmappers.JsonCountryResponse
 import com.eg.glovotest.network.services.GlovoService
 import retrofit2.Response
@@ -43,7 +44,28 @@ class GlovoDataRepositoryImp(val glovoService: GlovoService) : GlovoDataReposito
     }
 
     override fun getCities(): LiveData<List<City>> {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        var data = MutableLiveData<List<City>>()
+
+        glovoService.getCitiesList().enqueue(object : Callback<List<JsonCityResponse>> {
+
+            override fun onFailure(call: Call<List<JsonCityResponse>>, t: Throwable) {
+                Log.e("Network Call Failed", t.toString())
+                // For the sake of simplicity i skip error handling here
+                // I should wrap the response in a customized Observer to a better handling on the view.
+            }
+
+            override fun onResponse(call: Call<List<JsonCityResponse>>, response: Response<List<JsonCityResponse>>) {
+                response.body()?.let {
+                    var citiesList = mutableListOf<City>()
+                    for (cityJson in it){
+                        citiesList.add(cityJson.getData())
+                    }
+                    data.value = citiesList
+                }
+            }
+
+        })
+        return data
     }
 
     override fun getCityDetail(cityId: String): LiveData<CityDetails> {
