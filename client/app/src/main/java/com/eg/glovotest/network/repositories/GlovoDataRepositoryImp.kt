@@ -9,6 +9,7 @@ import retrofit2.Callback
 import com.eg.glovotest.network.entities.City
 import com.eg.glovotest.network.entities.CityDetails
 import com.eg.glovotest.network.entities.Country
+import com.eg.glovotest.network.jsonmappers.JsonCityDetailResponse
 import com.eg.glovotest.network.jsonmappers.JsonCityResponse
 import com.eg.glovotest.network.jsonmappers.JsonCountryResponse
 import com.eg.glovotest.network.services.GlovoService
@@ -69,8 +70,24 @@ class GlovoDataRepositoryImp(val glovoService: GlovoService) : GlovoDataReposito
     }
 
     override fun getCityDetail(cityId: String): LiveData<CityDetails> {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        var data = MutableLiveData<CityDetails>()
+
+        glovoService.getCityDetails(cityId).enqueue(object : Callback<JsonCityDetailResponse> {
+
+            override fun onFailure(call: Call<JsonCityDetailResponse>, t: Throwable) {
+                Log.e("Network Call Failed", t.toString())
+                // For the sake of simplicity i skip error handling here
+                // I should wrap the response in a customized Observer to a better handling on the view.
+            }
+
+            override fun onResponse(call: Call<JsonCityDetailResponse>, response: Response<JsonCityDetailResponse>) {
+                response.body()?.let {
+                    data.value = it.getData()
+                }
+            }
+
+        })
+        return data
     }
-    
 }
 

@@ -1,5 +1,6 @@
 package com.eg.glovotest.network.services
 
+import com.eg.glovotest.network.jsonmappers.JsonCityDetailResponse
 import com.eg.glovotest.network.jsonmappers.JsonCityResponse
 import com.eg.glovotest.network.jsonmappers.JsonCountryResponse
 import okhttp3.ResponseBody
@@ -19,5 +20,5 @@ interface GlovoService {
 
     @GET("cities/{city_code}")
     fun getCityDetails(@Path("city_code") cityCode : String)
-            : Call<ResponseBody>
+            : Call<JsonCityDetailResponse>
 }
