@@ -1,21 +1,5 @@
 package com.eg.glovotest.viewmodels
 
-import org.junit.Test
-
-import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import com.eg.glovotest.utils.MockedDataUtils
-import com.eg.glovotest.network.services.GlovoService
-import com.eg.glovotest.ui.viewmodels.MainActivityViewModel
-import com.nhaarman.mockitokotlin2.any
-import com.nhaarman.mockitokotlin2.mock
-import com.nhaarman.mockitokotlin2.whenever
-import org.junit.Assert.*
-import org.junit.Before
-import org.junit.Rule
-import org.junit.rules.TestRule
-import retrofit2.Response
-import kotlinx.coroutines.runBlocking
-
 class MainActivityViewModelTest {
 
     // Test used for dev purposes
@@ -23,8 +7,8 @@ class MainActivityViewModelTest {
 //    @get:Rule
 //    var rule: TestRule = InstantTaskExecutorRule()
 //
-//    private val viewModel = MainActivityViewModel()
-//    private val mockApi: GlovoService = mock()
+//    private val viewModel = MapActivityViewModel()
+//    private val mockApi: GlovoServiceAPI = mock()
 //    private val mockedDataUtils = MockedDataUtils()
 //
 //    @Before
@@ -43,7 +27,7 @@ class MainActivityViewModelTest {
 //    }
 //
 //    @Test fun test_getCountriesWithCity_returns_data() = runBlocking {
-//        viewModel.getCountriesAndCities()
+//        viewModel.getDataFromBackend()
 //
 //        val countriesList = viewModel.countriesWithCities.value
 //

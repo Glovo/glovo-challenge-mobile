@@ -8,7 +8,7 @@ class RetrofitRequest {
     companion object {
 
         val retrofit: Retrofit =  Retrofit.Builder()
-                .baseUrl("http://localhost:3000/api/")
+                .baseUrl("http://10.0.2.2:3000/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
 

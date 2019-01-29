@@ -12,17 +12,17 @@ import com.eg.glovotest.entities.Country
 import com.eg.glovotest.network.jsonmappers.JsonCityDetailResponse
 import com.eg.glovotest.network.jsonmappers.JsonCityResponse
 import com.eg.glovotest.network.jsonmappers.JsonCountryResponse
-import com.eg.glovotest.network.services.GlovoService
+import com.eg.glovotest.network.services.GlovoServiceAPI
 import retrofit2.Response
 
 
 @Singleton
-class GlovoDataRepositoryImp(val glovoService: GlovoService) : GlovoDataRepository {
+class GlovoDataRepositoryImp(val glovoServiceAPI: GlovoServiceAPI) : GlovoDataRepository {
 
     override fun getCountries(): LiveData<List<Country>> {
         var data = MutableLiveData<List<Country>>()
 
-        glovoService.getCountriesList().enqueue(object : Callback<List<JsonCountryResponse>> {
+        glovoServiceAPI.getCountriesList().enqueue(object : Callback<List<JsonCountryResponse>> {
 
             override fun onFailure(call: Call<List<JsonCountryResponse>>, t: Throwable) {
                 Log.e("Network Call Failed", t.toString())
@@ -47,7 +47,7 @@ class GlovoDataRepositoryImp(val glovoService: GlovoService) : GlovoDataReposito
     override fun getCities(): LiveData<List<City>> {
         var data = MutableLiveData<List<City>>()
 
-        glovoService.getCitiesList().enqueue(object : Callback<List<JsonCityResponse>> {
+        glovoServiceAPI.getCitiesList().enqueue(object : Callback<List<JsonCityResponse>> {
 
             override fun onFailure(call: Call<List<JsonCityResponse>>, t: Throwable) {
                 Log.e("Network Call Failed", t.toString())
@@ -72,7 +72,7 @@ class GlovoDataRepositoryImp(val glovoService: GlovoService) : GlovoDataReposito
     override fun getCityDetail(cityId: String): LiveData<CityDetails> {
         var data = MutableLiveData<CityDetails>()
 
-        glovoService.getCityDetails(cityId).enqueue(object : Callback<JsonCityDetailResponse> {
+        glovoServiceAPI.getCityDetails(cityId).enqueue(object : Callback<JsonCityDetailResponse> {
 
             override fun onFailure(call: Call<JsonCityDetailResponse>, t: Throwable) {
                 Log.e("Network Call Failed", t.toString())
