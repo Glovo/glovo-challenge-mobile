@@ -3,7 +3,9 @@ package com.eg.glovotest.daggerInjection
 import android.app.Application
 import android.content.Context
 import android.content.SharedPreferences
-import com.eg.glovotest.network.services.GlovoService
+import com.eg.glovotest.network.repositories.GlovoDataRepository
+import com.eg.glovotest.network.repositories.GlovoDataRepositoryImp
+import com.eg.glovotest.network.services.GlovoServiceAPI
 import com.eg.glovotest.network.services.RetrofitRequest
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
@@ -17,11 +19,18 @@ import javax.inject.Singleton
 class AppModule(internal val application : Application) {
 
     @Provides
-    fun provideGlovoService(): GlovoService {
-        return provideRetrofitClient().create(GlovoService::class.java)
     fun provideFusedLocationProvider(): FusedLocationProviderClient {
         return LocationServices.getFusedLocationProviderClient(application.baseContext)
     }
+
+    @Provides
+    fun provideGlovoRepository(): GlovoDataRepository {
+        return GlovoDataRepositoryImp(provideGlovoService())
+    }
+
+    @Provides
+    fun provideGlovoService(): GlovoServiceAPI {
+        return provideRetrofitClient().create(GlovoServiceAPI::class.java)
     }
 
     @Provides

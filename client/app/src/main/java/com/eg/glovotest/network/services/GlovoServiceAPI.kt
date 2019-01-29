@@ -8,17 +8,17 @@ import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path
 
-interface GlovoService {
+interface GlovoServiceAPI {
 
-    @GET("countries")
+    @GET("api/countries")
     fun getCountriesList()
             : Call<List<JsonCountryResponse>>
 
-    @GET("cities")
+    @GET("api/cities")
     fun getCitiesList()
             : Call<List<JsonCityResponse>>
 
-    @GET("cities/{city_code}")
-    fun getCityDetails(@Path("city_code") cityCode : String)
+    @GET("api/cities/{code}")
+    fun getCityDetails(@Path("code") cityCode : String)
             : Call<JsonCityDetailResponse>
 }
