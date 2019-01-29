@@ -1,6 +1,6 @@
 package com.eg.glovotest.network.jsonmappers
 
-import com.eg.glovotest.network.entities.Country
+import com.eg.glovotest.entities.Country
 import com.google.gson.annotations.SerializedName
 
 data class JsonCountryResponse  (
@@ -9,6 +9,7 @@ data class JsonCountryResponse  (
     : JsonResponseData {
 
     override fun getData(): Country {
-       return Country(code, name)
+       return Country(code, name, listOf()
+       )
     }
 }

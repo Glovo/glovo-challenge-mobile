@@ -6,9 +6,9 @@ import android.util.Log
 import javax.inject.Singleton
 import retrofit2.Call
 import retrofit2.Callback
-import com.eg.glovotest.network.entities.City
-import com.eg.glovotest.network.entities.CityDetails
-import com.eg.glovotest.network.entities.Country
+import com.eg.glovotest.entities.City
+import com.eg.glovotest.entities.CityDetails
+import com.eg.glovotest.entities.Country
 import com.eg.glovotest.network.jsonmappers.JsonCityDetailResponse
 import com.eg.glovotest.network.jsonmappers.JsonCityResponse
 import com.eg.glovotest.network.jsonmappers.JsonCountryResponse

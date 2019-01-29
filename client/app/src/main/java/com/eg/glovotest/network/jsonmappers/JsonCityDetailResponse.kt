@@ -1,6 +1,6 @@
 package com.eg.glovotest.network.jsonmappers
 
-import com.eg.glovotest.network.entities.CityDetails
+import com.eg.glovotest.entities.CityDetails
 import com.google.gson.annotations.SerializedName
 
 data class JsonCityDetailResponse  (

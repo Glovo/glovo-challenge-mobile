@@ -1,4 +1,4 @@
-package com.eg.glovotest.network.entities
+package com.eg.glovotest.entities
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
