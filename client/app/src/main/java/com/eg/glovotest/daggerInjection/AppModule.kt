@@ -5,6 +5,8 @@ import android.content.Context
 import android.content.SharedPreferences
 import com.eg.glovotest.network.services.GlovoService
 import com.eg.glovotest.network.services.RetrofitRequest
+import com.google.android.gms.location.FusedLocationProviderClient
+import com.google.android.gms.location.LocationServices
 import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit
@@ -17,6 +19,9 @@ class AppModule(internal val application : Application) {
     @Provides
     fun provideGlovoService(): GlovoService {
         return provideRetrofitClient().create(GlovoService::class.java)
+    fun provideFusedLocationProvider(): FusedLocationProviderClient {
+        return LocationServices.getFusedLocationProviderClient(application.baseContext)
+    }
     }
 
     @Provides
