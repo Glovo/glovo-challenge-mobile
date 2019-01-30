@@ -13,19 +13,29 @@ import com.eg.glovotest.ui.viewmodels.MainActivityViewModel
 import dagger.android.AndroidInjection
 import javax.inject.Inject
 import android.content.pm.PackageManager
+import android.support.v4.content.ContextCompat
 import android.view.View
 import com.eg.glovotest.Constants
 import com.eg.glovotest.entities.City
 import com.eg.glovotest.entities.CountriesAndCitiesWrapper
 import com.eg.glovotest.ui.fragments.CityPickerFragment
+import com.google.android.gms.maps.CameraUpdateFactory
+import com.google.android.gms.maps.GoogleMap
+import com.google.android.gms.maps.OnMapReadyCallback
+import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.Marker
+import com.google.android.gms.maps.model.PolygonOptions
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity(), CityPickerFragment.OnCityListFragmentInteractionListener {
+class MainActivity : AppCompatActivity(), CityPickerFragment.OnCityListFragmentInteractionListener, OnMapReadyCallback,
+    GoogleMap.OnCameraMoveListener, GoogleMap.OnMarkerClickListener {
 
     @Inject
     lateinit var viewModelFactory: ViewModelFactory
-    private lateinit var mainActivityViewModel : MainActivityViewModel
+    private lateinit var mainActivityViewModel: MainActivityViewModel
+
+    private lateinit var mMap: GoogleMap
 
     override fun onCreate(savedInstanceState: Bundle?) {
         AndroidInjection.inject(this)
@@ -33,6 +43,14 @@ class MainActivity : AppCompatActivity(), CityPickerFragment.OnCityListFragmentI
         setContentView(R.layout.activity_main)
 
         initViewModel()
+        initMap()
+
+    }
+
+    private fun initMap() {
+        val mapFragment = supportFragmentManager
+            .findFragmentById(R.id.map) as SupportMapFragment
+        mapFragment.getMapAsync(this)
     }
 
     private fun initViewModel() {
@@ -51,10 +69,9 @@ class MainActivity : AppCompatActivity(), CityPickerFragment.OnCityListFragmentI
     }
 
     private fun updateViewBasedOnPermission(hasLocalizationPermission: Boolean) {
-        if(hasLocalizationPermission) {
+        if (hasLocalizationPermission) {
             mainActivityViewModel.getUserLocation()
-        }
-        else {
+        } else {
             showEnableLocationPermissionPopUp()
         }
     }
@@ -62,7 +79,8 @@ class MainActivity : AppCompatActivity(), CityPickerFragment.OnCityListFragmentI
     private fun showPickCityFragment() {
         vMainActivityProgressBar.visibility = View.GONE
         vCityPickerFragmentContainer.visibility = View.VISIBLE
-        val wrappedCountriesAndCities = CountriesAndCitiesWrapper(mainActivityViewModel.countriesWithCities.value!!.toList())
+        val wrappedCountriesAndCities =
+            CountriesAndCitiesWrapper(mainActivityViewModel.countriesWithCities.value!!.toList())
         val cityPickerFragment = CityPickerFragment.newInstance(wrappedCountriesAndCities)
 
         supportFragmentManager.beginTransaction()
@@ -70,18 +88,24 @@ class MainActivity : AppCompatActivity(), CityPickerFragment.OnCityListFragmentI
     }
 
     private fun showMapFragment(centerOfWorkingArea: LatLng) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        vCityPickerFragmentContainer.visibility = View.GONE
+        drawAllTheWorkingAreasOnTheMap()
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(centerOfWorkingArea))
+        mMap.moveCamera(CameraUpdateFactory.zoomTo(10f))
     }
 
     private fun showEnableLocationPermissionPopUp() {
-        ActivityCompat.requestPermissions(this,
+        ActivityCompat.requestPermissions(
+            this,
             arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
-            Constants.LOCATION_CALLBACK_CODE)
+            Constants.LOCATION_CALLBACK_CODE
+        )
     }
 
     override fun onRequestPermissionsResult(
         requestCode: Int,
-        permissions: Array<String>, grantResults: IntArray) {
+        permissions: Array<String>, grantResults: IntArray
+    ) {
         when (requestCode) {
             Constants.LOCATION_CALLBACK_CODE -> {
                 // If request is cancelled, the result arrays are empty.
@@ -96,8 +120,44 @@ class MainActivity : AppCompatActivity(), CityPickerFragment.OnCityListFragmentI
     }
 
     override fun onCityPicked(city: City) {
-        Toast.makeText(this, "Selected City "+city.name, Toast.LENGTH_SHORT).show()
-//        mainActivityViewModel.getCityDetails(city.code)
-//        showMapFragment(city.workingArea!!.getCenterOfWorkingArea())
+        Toast.makeText(this, "Selected City " + city.name, Toast.LENGTH_SHORT).show()
+        showMapFragment(city.workingArea!!.getCenterOfWorkingArea())
     }
+
+    /**
+     *  Map Related configuration
+     */
+
+    override fun onMapReady(googleMap: GoogleMap) {
+        mMap = googleMap
+        mMap.uiSettings.isZoomControlsEnabled = true
+        mMap.uiSettings.isMyLocationButtonEnabled = true
+        mMap.setOnCameraMoveListener(this)
+        mMap.setOnMarkerClickListener(this)
+    }
+
+    override fun onCameraMove() {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    override fun onMarkerClick(p0: Marker?): Boolean {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    private fun drawAllTheWorkingAreasOnTheMap() {
+        mainActivityViewModel.countriesWithCities.value?.forEach {
+            it.cities.forEach {
+                it.workingArea?.getListOfLatLngArea()?.forEach { latLngList ->
+                    mMap.addPolygon(
+                        PolygonOptions()
+                            .addAll(latLngList)
+                            .fillColor(ContextCompat.getColor(this, R.color.colorAccentTransparent))
+                    )
+                }
+            }
+
+        }
+    }
+
+
 }

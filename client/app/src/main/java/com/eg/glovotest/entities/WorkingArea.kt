@@ -16,9 +16,10 @@ class WorkingArea(val codedWorkingArea: List<String>) : Parcelable {
 
     @IgnoredOnParcel // Required to add into city's parcelize
     private val areaLatLngBounds: LatLngBounds
+    private val workingAreaLatLngList: ArrayList<List<LatLng>>
 
     init {
-        val workingAreaLatLngList = decodeWorkingArea(codedWorkingArea)
+        workingAreaLatLngList = decodeWorkingArea(codedWorkingArea)
 
         val latLngBuilder = LatLngBounds.builder()
 
@@ -54,4 +55,7 @@ class WorkingArea(val codedWorkingArea: List<String>) : Parcelable {
     fun getCenterOfWorkingArea(): LatLng {
         return areaLatLngBounds.center
     }
+
+    fun getListOfLatLngArea(): ArrayList<List<LatLng>> {
+        return workingAreaLatLngList }
 }
