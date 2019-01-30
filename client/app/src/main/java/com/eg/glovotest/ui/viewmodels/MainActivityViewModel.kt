@@ -56,7 +56,10 @@ class MainActivityViewModel @Inject constructor() : ViewModel() {
 
         for (country in countriesWithCities.value!!) {
             for (city in country.cities) {
-                city.workingArea!!.isPositionInsideWorkingArea(userLatLang)
+                if (city.workingArea!!.isPositionInsideWorkingArea(userLatLang)){
+                    getCityDetails(city.code)
+                    return true
+                }
             }
         }
         return false

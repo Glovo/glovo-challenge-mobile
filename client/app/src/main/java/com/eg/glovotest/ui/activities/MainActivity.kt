@@ -92,6 +92,7 @@ class MainActivity : AppCompatActivity(), CityPickerFragment.OnCityListFragmentI
     }
 
     private fun showMapFragment(centerOfWorkingArea: LatLng) {
+        vMainActivityProgressBar.visibility = View.GONE
         vCityPickerFragmentContainer.visibility = View.GONE
         drawAllTheWorkingAreasOnTheMap()
         addAllTheMarkers()
@@ -103,6 +104,7 @@ class MainActivity : AppCompatActivity(), CityPickerFragment.OnCityListFragmentI
         markers.forEach{ marker ->
             val mapMarker = mMap.addMarker(marker.markerOptions)
             mapMarker.tag = marker.city
+            mapMarker.isVisible = false
             listOfMarkers.add(mapMarker)
         }
     }
@@ -133,8 +135,8 @@ class MainActivity : AppCompatActivity(), CityPickerFragment.OnCityListFragmentI
     }
 
     override fun onCityPicked(city: City) {
-        Toast.makeText(this, "Selected City " + city.name, Toast.LENGTH_SHORT).show()
         showMapFragment(city.workingArea!!.getCenterOfWorkingArea())
+        mainActivityViewModel.getCityDetails(city.code)
     }
 
     private fun updateCityDetails(cityDetails: CityDetails) {
