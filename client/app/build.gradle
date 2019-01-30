@@ -10,7 +10,7 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.eg.glovotest"
-        minSdkVersion 21
+        minSdkVersion 23
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -45,6 +45,7 @@ dependencies {
 
     // Dagger2
     implementation 'com.google.dagger:dagger:2.16'
+    implementation 'com.android.support:support-v4:28.0.0'
     annotationProcessor 'com.google.dagger:dagger-compiler:2.16'
     kapt 'com.google.dagger:dagger-compiler:2.16'
     implementation 'com.google.dagger:dagger-android-support:2.16'
@@ -53,7 +54,7 @@ dependencies {
     kapt 'com.google.dagger:dagger-android-processor:2.16'
 
     // Glide / Image Downloading
-    implementation ("com.github.bumptech.glide:glide:4.8.0")
+    implementation("com.github.bumptech.glide:glide:4.8.0")
     annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
 
     // Retrofit2
