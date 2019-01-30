@@ -1,13 +1,11 @@
 package com.eg.glovotest.ui.adapter
 
 
-import android.content.Context
 import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.RecyclerView.ViewHolder
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
 import android.widget.TextView
 import com.eg.glovotest.R
 import com.eg.glovotest.entities.City

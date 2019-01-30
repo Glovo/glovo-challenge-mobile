@@ -15,7 +15,6 @@ import com.eg.glovotest.entities.MapMarker
 import com.eg.glovotest.network.repositories.GlovoDataRepository
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.maps.model.LatLng
-import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
 import javax.inject.Inject
 
@@ -26,7 +25,7 @@ class MainActivityViewModel @Inject constructor() : ViewModel() {
     @Inject
     lateinit var fusedLocationClient: FusedLocationProviderClient
 
-    lateinit var userLastLocation: Location
+    private lateinit var userLastLocation: Location
 
     var userHasLocationPermission = MutableLiveData<Boolean>()
 
@@ -65,7 +64,7 @@ class MainActivityViewModel @Inject constructor() : ViewModel() {
         return false
     }
 
-    fun getDataFromBackend() {
+    private fun getDataFromBackend() {
         repository.getCities().observeForever {
             it?.let { cities ->
                 getCountriesData(cities)
@@ -83,12 +82,12 @@ class MainActivityViewModel @Inject constructor() : ViewModel() {
     }
 
     private fun addCitiesToTheRespectiveCountries(listOfCities: List<City>, countries: List<Country>) {
-        var countriesWithCitiesList = mutableListOf<Country>()
+        val countriesWithCitiesList = mutableListOf<Country>()
         for (country in countries) {
             val listOfCitiesOfACertainCountry = listOfCities.filter { city -> city.countryCode == country.code }
 
             // We skip countries without any cities
-            listOfCitiesOfACertainCountry?.let {
+            listOfCitiesOfACertainCountry.let {
                 countriesWithCitiesList.add(Country(country.code, country.name, listOfCitiesOfACertainCountry))
             }
         }

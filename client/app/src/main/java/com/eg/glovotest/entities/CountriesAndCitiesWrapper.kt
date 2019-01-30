@@ -1,7 +1,6 @@
 package com.eg.glovotest.entities
 
 import android.os.Parcelable
-import com.eg.glovotest.entities.City
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
@@ -11,7 +10,7 @@ data class CountriesAndCitiesWrapper (
 
 {
     fun getPlainListOfCountriesAndCities(): ArrayList<Any> {
-        var plainListOfCountriesAndCities = arrayListOf<Any>()
+        val plainListOfCountriesAndCities = arrayListOf<Any>()
 
         for (country in countries) {
             plainListOfCountriesAndCities.add(country)

@@ -16,7 +16,7 @@ import com.eg.glovotest.ui.adapter.ListOfCitiesRecyclerViewAdapter
 class CityPickerFragment : Fragment() {
 
     private var listener: OnCityListFragmentInteractionListener? = null
-    lateinit var listOfCountriesAndCitiesWithCities: CountriesAndCitiesWrapper
+    private lateinit var listOfCountriesAndCitiesWithCities: CountriesAndCitiesWrapper
 
     companion object {
         const val ARG_LIST_OF_COUNTRIES = "LIST_OF_COUNTRIES"

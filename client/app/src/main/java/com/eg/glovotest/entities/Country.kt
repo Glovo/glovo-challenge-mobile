@@ -1,7 +1,6 @@
 package com.eg.glovotest.entities
 
 import android.os.Parcelable
-import com.eg.glovotest.entities.City
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize

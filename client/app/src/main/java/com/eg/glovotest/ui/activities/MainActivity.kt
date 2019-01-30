@@ -3,24 +3,21 @@ package com.eg.glovotest.ui.activities
 import android.Manifest
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
-import android.support.v7.app.AppCompatActivity
+import android.content.pm.PackageManager
 import android.os.Bundle
 import android.support.v4.app.ActivityCompat
+import android.support.v4.content.ContextCompat
+import android.support.v7.app.AppCompatActivity
+import android.view.View
 import android.widget.Toast
+import com.eg.glovotest.Constants
 import com.eg.glovotest.R
 import com.eg.glovotest.daggerInjection.ViewModelFactory
-import com.eg.glovotest.ui.viewmodels.MainActivityViewModel
-import dagger.android.AndroidInjection
-import javax.inject.Inject
-import android.content.pm.PackageManager
-import android.support.v4.content.ContextCompat
-import android.view.View
-import com.eg.glovotest.Constants
 import com.eg.glovotest.entities.City
 import com.eg.glovotest.entities.CityDetails
 import com.eg.glovotest.entities.CountriesAndCitiesWrapper
-import com.eg.glovotest.entities.MapMarker
 import com.eg.glovotest.ui.fragments.CityPickerFragment
+import com.eg.glovotest.ui.viewmodels.MainActivityViewModel
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -28,7 +25,9 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.PolygonOptions
+import dagger.android.AndroidInjection
 import kotlinx.android.synthetic.main.activity_main.*
+import javax.inject.Inject
 
 class MainActivity : AppCompatActivity(), CityPickerFragment.OnCityListFragmentInteractionListener, OnMapReadyCallback,
     GoogleMap.OnCameraMoveListener, GoogleMap.OnMarkerClickListener {
@@ -99,40 +98,6 @@ class MainActivity : AppCompatActivity(), CityPickerFragment.OnCityListFragmentI
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(centerOfWorkingArea, Constants.ZOOM_LEVEL_NEIGHBORHOOD))
     }
 
-    private fun addAllTheMarkers() {
-        val markers = mainActivityViewModel.listOfCityMarkers
-        markers.forEach{ marker ->
-            val mapMarker = mMap.addMarker(marker.markerOptions)
-            mapMarker.tag = marker.city
-            mapMarker.isVisible = false
-            listOfMarkers.add(mapMarker)
-        }
-    }
-
-    private fun showEnableLocationPermissionPopUp() {
-        ActivityCompat.requestPermissions(
-            this,
-            arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
-            Constants.LOCATION_CALLBACK_CODE
-        )
-    }
-
-    override fun onRequestPermissionsResult(
-        requestCode: Int,
-        permissions: Array<String>, grantResults: IntArray
-    ) {
-        when (requestCode) {
-            Constants.LOCATION_CALLBACK_CODE -> {
-                // If request is cancelled, the result arrays are empty.
-                if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    mainActivityViewModel.getUserLocation()
-                } else {
-                    Toast.makeText(this, "Please Accept The Permission", Toast.LENGTH_SHORT).show()
-                }
-                return
-            }
-        }
-    }
 
     override fun onCityPicked(city: City) {
         showMapFragment(city.workingArea!!.getCenterOfWorkingArea())
@@ -146,7 +111,7 @@ class MainActivity : AppCompatActivity(), CityPickerFragment.OnCityListFragmentI
     }
 
     /**
-     *  Map Related configuration
+     *  Map Related configuration and methods
      */
 
     override fun onMapReady(googleMap: GoogleMap) {
@@ -187,6 +152,46 @@ class MainActivity : AppCompatActivity(), CityPickerFragment.OnCityListFragmentI
                 }
             }
 
+        }
+    }
+
+    private fun addAllTheMarkers() {
+        val markers = mainActivityViewModel.listOfCityMarkers
+        markers.forEach{ marker ->
+            val mapMarker = mMap.addMarker(marker.markerOptions)
+            mapMarker.tag = marker.city
+            mapMarker.isVisible = false
+            listOfMarkers.add(mapMarker)
+        }
+    }
+
+
+    /**
+     *  Permission related methods
+     */
+
+    private fun showEnableLocationPermissionPopUp() {
+        ActivityCompat.requestPermissions(
+            this,
+            arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
+            Constants.LOCATION_CALLBACK_CODE
+        )
+    }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<String>, grantResults: IntArray
+    ) {
+        when (requestCode) {
+            Constants.LOCATION_CALLBACK_CODE -> {
+                // If request is cancelled, the result arrays are empty.
+                if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    mainActivityViewModel.getUserLocation()
+                } else {
+                    Toast.makeText(this, "Please Accept The Permission", Toast.LENGTH_SHORT).show()
+                }
+                return
+            }
         }
     }
 

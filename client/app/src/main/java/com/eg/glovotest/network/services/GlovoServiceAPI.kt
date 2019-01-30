@@ -3,7 +3,6 @@ package com.eg.glovotest.network.services
 import com.eg.glovotest.network.jsonmappers.JsonCityDetailResponse
 import com.eg.glovotest.network.jsonmappers.JsonCityResponse
 import com.eg.glovotest.network.jsonmappers.JsonCountryResponse
-import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path

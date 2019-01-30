@@ -12,7 +12,7 @@ import kotlinx.android.parcel.Parcelize
  Uses https://github.com/googlemaps/android-maps-utils
  */
 @Parcelize
-class WorkingArea(val codedWorkingArea: List<String>) : Parcelable {
+class WorkingArea(private val codedWorkingArea: List<String>) : Parcelable {
 
     @IgnoredOnParcel // Required to add into city's parcelize
     private val areaLatLngBounds: LatLngBounds

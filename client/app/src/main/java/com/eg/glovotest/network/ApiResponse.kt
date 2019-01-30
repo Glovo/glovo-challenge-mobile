@@ -2,6 +2,10 @@ package com.eg.glovotest.network
 
 class ApiResponse {
 
+    /**
+     *  TODO Use generic APIRESPONSE to manage API errors
+     */
+
     var responseObjects: List<Any>? = null
     var error: Throwable? = null
 

@@ -20,7 +20,7 @@ import retrofit2.Response
 class GlovoDataRepositoryImp(val glovoServiceAPI: GlovoServiceAPI) : GlovoDataRepository {
 
     override fun getCountries(): LiveData<List<Country>> {
-        var data = MutableLiveData<List<Country>>()
+        val data = MutableLiveData<List<Country>>()
 
         glovoServiceAPI.getCountriesList().enqueue(object : Callback<List<JsonCountryResponse>> {
 
@@ -32,7 +32,7 @@ class GlovoDataRepositoryImp(val glovoServiceAPI: GlovoServiceAPI) : GlovoDataRe
 
             override fun onResponse(call: Call<List<JsonCountryResponse>>, response: Response<List<JsonCountryResponse>>) {
                 response.body()?.let {
-                    var countriesList = mutableListOf<Country>()
+                    val countriesList = mutableListOf<Country>()
                     for (countryJson in it){
                         countriesList.add(countryJson.getData())
                     }
@@ -45,7 +45,7 @@ class GlovoDataRepositoryImp(val glovoServiceAPI: GlovoServiceAPI) : GlovoDataRe
     }
 
     override fun getCities(): LiveData<List<City>> {
-        var data = MutableLiveData<List<City>>()
+        val data = MutableLiveData<List<City>>()
 
         glovoServiceAPI.getCitiesList().enqueue(object : Callback<List<JsonCityResponse>> {
 
@@ -57,7 +57,7 @@ class GlovoDataRepositoryImp(val glovoServiceAPI: GlovoServiceAPI) : GlovoDataRe
 
             override fun onResponse(call: Call<List<JsonCityResponse>>, response: Response<List<JsonCityResponse>>) {
                 response.body()?.let {
-                    var citiesList = mutableListOf<City>()
+                    val citiesList = mutableListOf<City>()
                     for (cityJson in it){
                         citiesList.add(cityJson.getData())
                     }
@@ -70,7 +70,7 @@ class GlovoDataRepositoryImp(val glovoServiceAPI: GlovoServiceAPI) : GlovoDataRe
     }
 
     override fun getCityDetail(cityId: String): LiveData<CityDetails> {
-        var data = MutableLiveData<CityDetails>()
+        val data = MutableLiveData<CityDetails>()
 
         glovoServiceAPI.getCityDetails(cityId).enqueue(object : Callback<JsonCityDetailResponse> {
 

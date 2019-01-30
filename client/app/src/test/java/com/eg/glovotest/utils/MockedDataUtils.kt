@@ -28,7 +28,7 @@ class MockedDataUtils {
 
     fun getMockedCityListData() : List<JsonCityResponse> {
         val cityList: MutableList<JsonCityResponse> = ArrayList()
-        cityList.add(JsonCityResponse(cityDetails.code, cityDetails.name, cityDetails.country_code))
+        cityList.add(JsonCityResponse(cityDetails.code, cityDetails.name, cityDetails.country_code, cityDetails.working_area))
         return cityList
     }
 
