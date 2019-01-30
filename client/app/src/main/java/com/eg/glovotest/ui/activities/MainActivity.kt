@@ -90,8 +90,7 @@ class MainActivity : AppCompatActivity(), CityPickerFragment.OnCityListFragmentI
     private fun showMapFragment(centerOfWorkingArea: LatLng) {
         vCityPickerFragmentContainer.visibility = View.GONE
         drawAllTheWorkingAreasOnTheMap()
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(centerOfWorkingArea))
-        mMap.moveCamera(CameraUpdateFactory.zoomTo(10f))
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(centerOfWorkingArea, Constants.ZOOM_LEVEL_CITY))
     }
 
     private fun showEnableLocationPermissionPopUp() {
@@ -137,11 +136,28 @@ class MainActivity : AppCompatActivity(), CityPickerFragment.OnCityListFragmentI
     }
 
     override fun onCameraMove() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        val cameraPosition = mMap.cameraPosition
+        showMarkers(cameraPosition.zoom < Constants.ZOOM_LEVEL_CITY)
     }
 
-    override fun onMarkerClick(p0: Marker?): Boolean {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    private fun showMarkers(showMarkers: Boolean) { // We do this only if we hace zoomed out more than city zoom level
+        if(showMarkers) {
+            val markers = mainActivityViewModel.listOfCityMarkers
+            markers.forEach{ marker ->
+                val mapMarker = mMap.addMarker(marker.markerOptions)
+                mapMarker.tag = marker.city
+            }
+        } else {
+            mMap.clear()
+            drawAllTheWorkingAreasOnTheMap()
+        }
+
+    }
+
+    override fun onMarkerClick(cityMarker: Marker?): Boolean {
+        val city = cityMarker?.tag as City
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(city.workingArea?.getCenterOfWorkingArea(), Constants.ZOOM_LEVEL_CITY))
+        return true
     }
 
     private fun drawAllTheWorkingAreasOnTheMap() {
