@@ -18,6 +18,7 @@ import android.view.View
 import com.eg.glovotest.Constants
 import com.eg.glovotest.entities.City
 import com.eg.glovotest.entities.CountriesAndCitiesWrapper
+import com.eg.glovotest.entities.MapMarker
 import com.eg.glovotest.ui.fragments.CityPickerFragment
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -36,6 +37,7 @@ class MainActivity : AppCompatActivity(), CityPickerFragment.OnCityListFragmentI
     private lateinit var mainActivityViewModel: MainActivityViewModel
 
     private lateinit var mMap: GoogleMap
+    private var listOfMarkers = mutableListOf<Marker>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         AndroidInjection.inject(this)
@@ -90,7 +92,17 @@ class MainActivity : AppCompatActivity(), CityPickerFragment.OnCityListFragmentI
     private fun showMapFragment(centerOfWorkingArea: LatLng) {
         vCityPickerFragmentContainer.visibility = View.GONE
         drawAllTheWorkingAreasOnTheMap()
+        addAllTheMarkers()
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(centerOfWorkingArea, Constants.ZOOM_LEVEL_CITY))
+    }
+
+    private fun addAllTheMarkers() {
+        val markers = mainActivityViewModel.listOfCityMarkers
+        markers.forEach{ marker ->
+            val mapMarker = mMap.addMarker(marker.markerOptions)
+            mapMarker.tag = marker.city
+            listOfMarkers.add(mapMarker)
+        }
     }
 
     private fun showEnableLocationPermissionPopUp() {
@@ -140,18 +152,9 @@ class MainActivity : AppCompatActivity(), CityPickerFragment.OnCityListFragmentI
         showMarkers(cameraPosition.zoom < Constants.ZOOM_LEVEL_CITY)
     }
 
-    private fun showMarkers(showMarkers: Boolean) { // We do this only if we hace zoomed out more than city zoom level
-        if(showMarkers) {
-            val markers = mainActivityViewModel.listOfCityMarkers
-            markers.forEach{ marker ->
-                val mapMarker = mMap.addMarker(marker.markerOptions)
-                mapMarker.tag = marker.city
-            }
-        } else {
-            mMap.clear()
-            drawAllTheWorkingAreasOnTheMap()
-        }
-
+    private fun showMarkers(showMarkers: Boolean) {
+        // We do this only if we hace zoomed out more than city zoom level
+        listOfMarkers.forEach { marker -> marker.isVisible = showMarkers }
     }
 
     override fun onMarkerClick(cityMarker: Marker?): Boolean {
