@@ -17,6 +17,7 @@ import android.support.v4.content.ContextCompat
 import android.view.View
 import com.eg.glovotest.Constants
 import com.eg.glovotest.entities.City
+import com.eg.glovotest.entities.CityDetails
 import com.eg.glovotest.entities.CountriesAndCitiesWrapper
 import com.eg.glovotest.entities.MapMarker
 import com.eg.glovotest.ui.fragments.CityPickerFragment
@@ -59,6 +60,7 @@ class MainActivity : AppCompatActivity(), CityPickerFragment.OnCityListFragmentI
         mainActivityViewModel = ViewModelProviders.of(this, viewModelFactory)[MainActivityViewModel::class.java]
         mainActivityViewModel.userHasLocationPermission.observe(this, Observer { updateViewBasedOnPermission(it!!) })
         mainActivityViewModel.countriesWithCities.observe(this, Observer { checkIfUserIsInAWorkingArea() })
+        mainActivityViewModel.currentCityDetails.observe(this, Observer { updateCityDetails(it!!) })
         mainActivityViewModel.checkIfUserHasLocationPermission(this)
     }
 
@@ -93,7 +95,7 @@ class MainActivity : AppCompatActivity(), CityPickerFragment.OnCityListFragmentI
         vCityPickerFragmentContainer.visibility = View.GONE
         drawAllTheWorkingAreasOnTheMap()
         addAllTheMarkers()
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(centerOfWorkingArea, Constants.ZOOM_LEVEL_CITY))
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(centerOfWorkingArea, Constants.ZOOM_LEVEL_NEIGHBORHOOD))
     }
 
     private fun addAllTheMarkers() {
@@ -135,6 +137,12 @@ class MainActivity : AppCompatActivity(), CityPickerFragment.OnCityListFragmentI
         showMapFragment(city.workingArea!!.getCenterOfWorkingArea())
     }
 
+    private fun updateCityDetails(cityDetails: CityDetails) {
+        vCityName.text = getString(R.string.city_name, cityDetails.name)
+        vCityCurrency.text = getString(R.string.city_currency, cityDetails.currency)
+        vCityTimezone.text = getString(R.string.city_timezone, cityDetails.time_zone)
+    }
+
     /**
      *  Map Related configuration
      */
@@ -159,7 +167,8 @@ class MainActivity : AppCompatActivity(), CityPickerFragment.OnCityListFragmentI
 
     override fun onMarkerClick(cityMarker: Marker?): Boolean {
         val city = cityMarker?.tag as City
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(city.workingArea?.getCenterOfWorkingArea(), Constants.ZOOM_LEVEL_CITY))
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(city.workingArea?.getCenterOfWorkingArea(), Constants.ZOOM_LEVEL_NEIGHBORHOOD))
+        mainActivityViewModel.getCityDetails(city.code)
         return true
     }
 

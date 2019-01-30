@@ -93,7 +93,11 @@ class MainActivityViewModel @Inject constructor() : ViewModel() {
     }
 
     fun getCityDetails(cityCode: String) {
-        currentCityDetails.postValue(repository.getCityDetail(cityCode).value)
+        repository.getCityDetail(cityCode).observeForever {
+            it?.let { cityDetails ->
+                currentCityDetails.postValue(cityDetails)
+            }
+        }
     }
 
     private fun setLastLocationAndGetWorkingAreaInformation(lastLocation: Location?) {

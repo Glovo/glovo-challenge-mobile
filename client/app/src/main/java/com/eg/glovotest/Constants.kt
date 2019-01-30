@@ -5,5 +5,6 @@ class Constants {
     companion object {
         const val LOCATION_CALLBACK_CODE = 9999
         const val ZOOM_LEVEL_CITY = 10F
+        const val ZOOM_LEVEL_NEIGHBORHOOD = 13F
     }
 }
