@@ -50,4 +50,8 @@ class WorkingArea(val codedWorkingArea: List<String>) : Parcelable {
     fun isPositionInsideWorkingArea(latLng: LatLng) : Boolean {
         return areaLatLngBounds.contains(latLng)
     }
+
+    fun getCenterOfWorkingArea(): LatLng {
+        return areaLatLngBounds.center
+    }
 }

@@ -49,7 +49,7 @@ class MainActivityViewModel @Inject constructor() : ViewModel() {
     }
 
     fun isUserIsInAWorkingArea(): Boolean {
-        val userLatLang = LatLng(userLastLocation.latitude, userLastLocation.longitude)
+        val userLatLang = getUserLatLng()
 
         for (country in countriesWithCities.value!!) {
             for (city in country.cities) {
@@ -97,6 +97,10 @@ class MainActivityViewModel @Inject constructor() : ViewModel() {
             getDataFromBackend()
         }
 
+    }
+
+    fun getUserLatLng(): LatLng {
+        return LatLng(userLastLocation.latitude, userLastLocation.longitude)
     }
 
 
