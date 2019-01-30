@@ -16,6 +16,7 @@ import com.eg.glovotest.entities.Country
 import com.eg.glovotest.network.repositories.GlovoDataRepository
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
+import com.google.android.gms.maps.model.LatLng
 import javax.inject.Inject
 
 class MainActivityViewModel @Inject constructor() : ViewModel() {
@@ -48,6 +49,13 @@ class MainActivityViewModel @Inject constructor() : ViewModel() {
     }
 
     fun isUserIsInAWorkingArea(): Boolean {
+        val userLatLang = LatLng(userLastLocation.latitude, userLastLocation.longitude)
+
+        for (country in countriesWithCities.value!!) {
+            for (city in country.cities) {
+                city.workingArea!!.isPositionInsideWorkingArea(userLatLang)
+            }
+        }
         return false
     }
 
