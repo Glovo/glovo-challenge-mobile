@@ -153,7 +153,7 @@ class MainActivity : AppCompatActivity(), CityPickerFragment.OnCityListFragmentI
     }
 
     private fun showMarkers(showMarkers: Boolean) {
-        // We do this only if we hace zoomed out more than city zoom level
+        // We do this only if we have zoomed out more than city zoom level
         listOfMarkers.forEach { marker -> marker.isVisible = showMarkers }
     }
 
@@ -170,6 +170,7 @@ class MainActivity : AppCompatActivity(), CityPickerFragment.OnCityListFragmentI
                     mMap.addPolygon(
                         PolygonOptions()
                             .addAll(latLngList)
+                            .strokeWidth(0f) // I didnt mix all the areas, but this way the separation is less notorious
                             .fillColor(ContextCompat.getColor(this, R.color.colorAccentTransparent))
                     )
                 }
