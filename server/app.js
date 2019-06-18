@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 
 // Database
 
-mongoose.connect('mongodb://glovo:challenge@ds219130.mlab.com:19130/glovo_challenge')
+mongoose.connect('mongodb://glovo:challenge@ds219130.mlab.com:19130/glovo_challenge', {useNewUrlParser: true})
 
 const Country = mongoose.model('countries', new mongoose.Schema({
     code: String,
