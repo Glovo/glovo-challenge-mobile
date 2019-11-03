@@ -1,0 +1,13 @@
+//
+//  Localizable.strings
+//  Glovo
+//
+//  Created by Eugène Peschard on 11/03/2019.
+//  Copyright © 2019 pesch.app All rights reserved.
+//
+
+//MARK: - Map Module
+"MAP_LABEL_TITLE" = "Glovo";
+
+"MAP_ALERT_TITLE" = "Failed updating location";
+"MAP_ALERT_OK" = "OK";

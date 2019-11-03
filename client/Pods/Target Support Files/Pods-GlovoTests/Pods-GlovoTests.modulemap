@@ -1,0 +1,6 @@
+framework module Pods_GlovoTests {
+  umbrella header "Pods-GlovoTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

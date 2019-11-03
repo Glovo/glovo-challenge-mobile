@@ -1,0 +1,6 @@
+framework module Pods_Glovo {
+  umbrella header "Pods-Glovo-umbrella.h"
+
+  export *
+  module * { export * }
+}

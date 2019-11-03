@@ -1,0 +1,15 @@
+//
+//  Debug.xcconfig
+//  Glovo
+//
+//  Created by Eugène Peschard on 11/03/2019.
+//  Copyright © 2019 pesch.app. All rights reserved.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+#include "Pods/Target Support Files/Pods-Glovo/Pods-Glovo.debug.xcconfig"
+
+PRODUCT_BUNDLE_IDENTIFIER = app.pesch.debug.Glovo;
+ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon-debug;
